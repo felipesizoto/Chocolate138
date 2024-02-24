@@ -8,4 +8,3 @@ Existe uma profissão: SCM - Software Configuration Management
 Github é um repositório com versionamento
 É um produto da Microsoft
 
-
