@@ -83,7 +83,7 @@ public class Account {
                 .body("status", is("Success")) // Status = Sucesso
                 .body("result", is("User authorized successfully."))
         .extract()
-        ;1
+        ;
 
 
         // Extração do Token
