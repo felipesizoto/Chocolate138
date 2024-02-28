@@ -3,7 +3,7 @@ package apitest;
 // 2 - Bibliotecas
 
 import com.google.gson.Gson;
-import entities.AccountEntitiy;
+import entities.AccountEntity;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -31,7 +31,7 @@ public class Account {
         // Arrange - Configura
 
         // Forma utilizando a classe AccountEntity
-        AccountEntitiy account = new AccountEntitiy(); // Instacia a entidade usuário
+        AccountEntity account = new AccountEntity(); // Instacia a entidade usuário
         account.userName = "charlie189"; // entrada e saída ( resultado esperado)
         account.password = "P@ssw0rd!";  // entrada
 
