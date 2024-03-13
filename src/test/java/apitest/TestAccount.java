@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
 // 3 - Classe
-public class Account {
+public class TestAccount {
     // 3.1 - Atributos
 
     String userID;
@@ -32,12 +32,12 @@ public class Account {
 
     // Método #1 - Criar usuário
     @Test(priority = 1)
-    public void testCreateUser() {
+    public void testCreateUser(ITestContext context) {
         // Arrange - Configura
 
         // Forma utilizando a classe AccountEntity
 
-        account.userName = "charlie151"; // entrada e saída ( resultado esperado)
+        account.userName = "charlie991"; // entrada e saída ( resultado esperado)
         account.password = "P@ssw0rd!";  // entrada
 
         jsonBody = gson.toJson(account); // Converte a entidade usuário no formato Json
@@ -64,6 +64,7 @@ public class Account {
         // extrair o userID(identificação do usuário)
 
         userID = resposta.jsonPath().getString("userID");
+        context.setAttribute("userID", userID);
         System.out.println("UserID extraído: " + userID);
 
     } // fim do método de criação do usuário
