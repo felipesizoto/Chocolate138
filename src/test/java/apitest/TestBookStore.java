@@ -54,7 +54,7 @@ public class TestBookStore {
         // Configura
         // Dados de entrada
         // userID virá pelo context
-        isbn.userID = context.getAttribute("userID").toString(); // código do usuário
+        isbn.userId = context.getAttribute("userID").toString(); // código do usuário
         isbn.collectionOfIsbns = new LoanEntity.ISBN[] {
                 new LoanEntity.ISBN("9781449325862")
         };
@@ -89,7 +89,7 @@ public class TestBookStore {
 
         // Alimentar a classe LoanEntity apenas com o código do usuário e o isbn
         isbn = new LoanEntity(); // reiniciando o objeto da classe LoanEntity
-        isbn.userID = context.getAttribute("userID").toString(); // código do usuário
+        isbn.userId = context.getAttribute("userID").toString(); // código do usuário
         isbn.isbn = isbnNovo; // código do livro novo
 
         // Executa

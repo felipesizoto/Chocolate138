@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.is;
 public class TestAccount {
     // 3.1 - Atributos
 
-    String userID;
+    String userId;
     String ct = "application/json"; // contentType da API
     String jsonBody; // variavel para guardar um json que será enviado
     String uri = "https://bookstore.toolsqa.com/Account/v1/"; // Endereço Base
@@ -37,7 +37,7 @@ public class TestAccount {
 
         // Forma utilizando a classe AccountEntity
 
-        account.userName = "charlie991"; // entrada e saída ( resultado esperado)
+        account.userName = "charlie9914"; // entrada e saída ( resultado esperado)
         account.password = "P@ssw0rd!";  // entrada
 
         jsonBody = gson.toJson(account); // Converte a entidade usuário no formato Json
@@ -63,9 +63,9 @@ public class TestAccount {
 
         // extrair o userID(identificação do usuário)
 
-        userID = resposta.jsonPath().getString("userID");
-        context.setAttribute("userID", userID);
-        System.out.println("UserID extraído: " + userID);
+        userId = resposta.jsonPath().getString("userID");
+        context.setAttribute("userID", userId);
+        System.out.println("UserID extraído: " + userId);
 
     } // fim do método de criação do usuário
 
@@ -144,7 +144,7 @@ public class TestAccount {
                 .contentType(ct)                // Formato da mensagem
                 .log().all()                    // Exibir tudo que acontece na ida
         .when()                                 // Quando
-                .get(uri + "User/" + userID) // Consulta o usuário pelo ID
+                .get(uri + "User/" + userId) // Consulta o usuário pelo ID
                 // Valida
         .then()                                 // Então
                 .log().all()                    // Exibir tudo que acontece na volta
@@ -168,12 +168,12 @@ public class TestAccount {
                 .log().all()                                      // Exibir tudo que acontece na ida
                 .header("Authorization", "Bearer " + token)
         .when()                                                   // Quando
-                .get(uri + "User/" + userID)                   // Consulta o usuário pelo ID
+                .get(uri + "User/" + userId)                   // Consulta o usuário pelo ID
                 // Valida
         .then()                                                   // Então
                 .log().all()                                      // Exibir tudo que acontece na volta
                 .statusCode(200)                               // Valida se a conexão teve sucesso
-                .body("userId", is(userID))                    // Valida o ID do usuário
+                .body("userId", is(userId))                    // Valida o ID do usuário
                 .body("username", is(account.userName));       // Valida o nome do usuário
     }
     @Test(priority = 6)
@@ -188,7 +188,7 @@ public class TestAccount {
                 .contentType(ct)
                 .header("Authorization", "Bearer " + token)
         .when()
-                .delete(uri + "User/" + userID)
+                .delete(uri + "User/" + userId)
         // Valida
         .then()
                 .log().all()

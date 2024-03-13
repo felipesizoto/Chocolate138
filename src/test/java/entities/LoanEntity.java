@@ -1,7 +1,7 @@
 package entities;
 
 public class LoanEntity {
-    public String userID;
+    public String userId;
     public ISBN[] collectionOfIsbns; // Lista com os códigos dos livros emprestado
     public String isbn; // código do livro externo
 
