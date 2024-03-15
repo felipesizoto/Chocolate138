@@ -20,12 +20,15 @@ public class TestBookStore {
     @BeforeClass // Antes da classe de todos os testes dentro dela
     // @BeforeMethod // Antes de cada teste
     public void setUp(ITestContext context){
+
         account.testCreateUser(context);     // cria um novo usuário
         account.testGenerateToken(context);  // gera um novo token
     }
     @AfterClass // Depois da classe e de todos os testes dentro dela
     // @AfterMethod // Depois de cada teste
-    public void tearDown(){
+    public void tearDown() throws InterruptedException { // trows InterruptedException, é uma exceção, utilizada devido o uso do Thread.sleep(3000)
+        //account.testResearchUser();
+        //Thread.sleep(3000); // espera bruta - algo para ser usado, mas para não ser deixado no código em definitivo - como um alfinete, deve ser removido da roupa antes da mesma ser entregue em definitivo
         account.testDeleteUser(); // exclui o usuário
     }
 
@@ -109,7 +112,8 @@ public class TestBookStore {
     }
 
 
-    /*
+
+
     @Test(priority = 4)
     public void testDeleteLoans(ITestContext context){
         // Configura
@@ -129,5 +133,7 @@ public class TestBookStore {
                 .statusCode(204)
         ;
     }
-*/
+
+
+
 }
