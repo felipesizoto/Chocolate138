@@ -51,9 +51,7 @@ import java.net.URL;
             vars = new HashMap<String, Object>();
         }
         @AfterMethod
-        public void tearDown() {
-            driver.quit();
-        }
+        public void tearDown() { driver.quit(); }
         @Test
         public void login() throws InterruptedException {
             driver.get("https://www.saucedemo.com/");
