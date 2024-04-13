@@ -9,7 +9,7 @@
 #      Quando clica no produto "Sauce Labs Backpack"
 
   Feature: Select Product in Store
-    Scenario: Selecting Product with Sucess
+    Scenario: Selecting Product with Success
       Given I access SauceDemo store
       When I filled a user "standart_user" and "secret_sauce"
       And I click in login
@@ -24,6 +24,8 @@
       And I verify the product title "Sauce Labs Backpack"
       And I verify the quantity is "1"
       And I verify the product price "$ 29.99"
+
+
 
 
 
