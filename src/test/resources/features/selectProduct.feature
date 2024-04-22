@@ -15,7 +15,7 @@
       And I click in login
       Then show pag's title "Products"
       And show cart's link
-      When I click in product "Sauce Labs Bacpack"
+      When I click in product "4"
       Then I verify the product title "Sauce Labs Backpack"
       And I verify the product price "$ 29.99"
       When I click in Add to Cart
