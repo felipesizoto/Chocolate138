@@ -59,7 +59,7 @@ public class selectProduct {
     }
 
     @When("I filled a user {string} and {string}")
-    public void i_filled_a_user_and(String user, String password) {
+    public void i_filled_a_user_and_password(String user, String password) {
         driver.findElement(By.id("user-name")).sendKeys(user); // escreve o conteúdo da variável user
         driver.findElement(By.id("password")).sendKeys(password); // escreve o conteúdo da variável user
     }

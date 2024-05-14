@@ -18,7 +18,7 @@ Feature: Select Product in Store
       When I click in product "4"
       Then I verify the product title "Sauce Labs Backpack"
       And I verify the product price "$29.99"
-      When I click in Add to Cartss
+      When I click in Add to Cart
       And I click in Cart icon
       Then I verify the page's title "Your Cart"
       And I verify the product title "Sauce Labs Backpack" in cart
