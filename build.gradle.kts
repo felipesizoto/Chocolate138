@@ -18,6 +18,7 @@ dependencies {
     implementation("io.github.bonigarcia:webdrivermanager:5.7.0")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("ch.qos.logback:logback-classic:1.2.6")
+    implementation("io.cucumber:cucumber-picocontainer:7.13.0")
 
 }
 
