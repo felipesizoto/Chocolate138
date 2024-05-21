@@ -22,6 +22,10 @@ utilize um device farm / serviço de teste em nuvem, como:
 - BrowserStack
 - Perfecto
 
+Roteiro de Mapeamento para Automação
+- Requisito: smartphone ou emulador, local ou remote (Saucelabs)
+
+
 
 
 

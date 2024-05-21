@@ -2,10 +2,7 @@ package steps;
 
 
 
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.BeforeAll;
-import io.cucumber.java.BeforeStep;
+import io.cucumber.java.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -30,7 +27,7 @@ public class selectProduct {
     static WebDriver driver;
     static String userForCookie;
 
-    @BeforeAll // Executa antes de todos os blocos de passos --> usar do Cucumber
+    @Before // Executa antes de todos os blocos de passos --> usar do Cucumber
     public static void before_all(){
         ChromeOptions options = new ChromeOptions();      // instancia o objeto de Opções do ChromeDriver
         options.addArguments("--remote-allow-origins=*"); // Permite qualquer origem remota
@@ -42,7 +39,7 @@ public class selectProduct {
         driver.manage().window().maximize();              // Maximiza a janela do navegador
     }
 
-    @AfterAll // Executa após todos os blocos de passos --> usar do Cucumber
+    @After // Executa após todos os blocos de passos --> usar do Cucumber
     public static void after_all() throws InterruptedException {
         // Antes de finalizar o teste, aproveitamos que ainda estamos na página do carrinho de compras
         // para remover o produto
